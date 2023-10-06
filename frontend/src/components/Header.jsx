@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import './Header.css'
 
 const Header = () => {
     const adminAuth = localStorage.getItem("adminData")
@@ -34,8 +35,10 @@ const Header = () => {
                     :
                     <>
                         <Link to="/userLogin">Login</Link>
+                        <Link to="/userSignUp">Sign Up</Link>
                         <Link to="/adminlogin" >Admin Login</Link>
                         <Link to="/addproduct" >Add Product</Link>
+                        <Link to="/allProducts">All Products</Link>
                     </>
             }
 

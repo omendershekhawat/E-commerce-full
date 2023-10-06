@@ -50,18 +50,22 @@
     cursor: pointer;
     border: none;
     outline: none;
-    color: #fff;
+    color: black;
     font-size: 1rem;
     font-weight: 800;
 }
 .product .actions .edit{
-background-color: blue;
+background-color: lightseagreen;
 }
 .product .actions .delete{
-background-color: red;
+background-color: lightslategray;
 }
 .product .items .label {
     width: 30%;
     font-size: 1.1rem;
     color: rgb(105, 106, 107);
+}
+ img {
+    height: 200px;
+    width: 200px;
 }

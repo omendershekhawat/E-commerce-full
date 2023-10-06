@@ -1,23 +1,24 @@
 import axios from 'axios'
 import React, { useState } from 'react'
-import { Navigate, json } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 function UserLogin() {
 
-    
+    const navigate = useNavigate()
         const[username, setUsername] = useState("")
         const [Password, setPassword] = useState("")
 
         const loginHandle = async () => {
             let result = await axios.post ("http://localhost:4000/user/login",{
                 username: username,
-                Password: Password
+                password: Password
             })
             result =result.data
+            // console.log(result);
 
             if(result.name){
-                localStorage.setItem(userData,json.stringify(result))
-                Navigate ("/")
+                localStorage.setItem("userData",JSON.stringify(result))
+                navigate("/")
             }
             else{
                 alert("please enter correct details")

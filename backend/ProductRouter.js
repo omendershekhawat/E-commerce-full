@@ -6,7 +6,7 @@ import path from "path"
 
 ProductRouter.get("/",async(req, res) =>{
     const existingProducts = await ProductModel.find()
-    console.log(existingProducts);
+    // console.log(existingProducts);
     res.json(existingProducts)
 })
 

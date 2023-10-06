@@ -1,6 +1,6 @@
-import React from 'react'
+import React ,{useState,useEffect}from 'react'
 import axios from 'axios'
-import './AddProduct.css'
+import './AllProduct.css'
 
 import { useNavigate } from 'react-router-dom'
 
@@ -37,11 +37,11 @@ function AllProducts() {
         <h1>All Products</h1>
         <div className='product-cont'>
             {
-                AllProducts.map((product) => {
+                allproducts.map((product) => {
                     return(
-                        <div className='product' key={product.id}>
+                        <div className='product' key={product._id}>
                             <div className="img-cont">
-                                <img src={`http:/localhost:4000/uploads/products/${product.image.filename}`} alt="Not Loaded" />
+                                <img src={`http://localhost:4000/uploads/${product.photo.filename}`} alt="Not Loaded" />
                             </div>
                             <div className='items'>
                                 <h2>{product.name}</h2>
