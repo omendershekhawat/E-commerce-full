@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import './Admin.css'
+6
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 

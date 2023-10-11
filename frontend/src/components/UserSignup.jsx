@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 // import './User.css'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
+import './Admin.css'
 
 const UserSignup = () => {
     const navigate = useNavigate();

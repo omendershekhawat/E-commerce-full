@@ -5,7 +5,7 @@ import './Header.css'
 const Header = () => {
     const adminAuth = localStorage.getItem("adminData")
     const userAuth = localStorage.getItem("userData")
-    console.log(JSON.parse(adminAuth));
+    // console.log(JSON.parse(adminAuth));
     return (
         <header>
             <Link to="/">Home</Link>
@@ -35,10 +35,10 @@ const Header = () => {
                     :
                     <>
                         <Link to="/userLogin">Login</Link>
-                        <Link to="/userSignUp">Sign Up</Link>
+                        {/* <Link to="/userSignUp">Sign Up</Link> */}
                         <Link to="/adminlogin" >Admin Login</Link>
-                        <Link to="/addproduct" >Add Product</Link>
-                        <Link to="/allProducts">All Products</Link>
+                        {/* <Link to="/addproduct" >Add Product</Link> */}
+                        {/* <Link to="/allProducts">All Products</Link> */}
                     </>
             }
 

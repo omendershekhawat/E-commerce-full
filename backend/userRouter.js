@@ -1,24 +1,27 @@
 import Express from "express";
 import UserModel from "./DB/userModel.js";
 import bcrypt from 'bcrypt'
+import Jwt from "jsonwebtoken";
 
 
 const UserRouter = Express.Router();
 
+const secretKey = 'omender-shekhawat'
+
 UserRouter.post("/register", async (req, res) => {
     let { name, email, username, password } = req.body
-    let usertoRegisster = new UserModel({ name, email, username, password })
-    bcrypt.hash(password, 10, (err, hash) => {
+    bcrypt.hash(password, 10, async (err, hash) => {
         if (err) {
             console.error(err);
+            return null
 
         }
         else {
-
-            console.log('Hash Password:', hash);
-
+            password = hash
+            let usertoRegisster = new UserModel({ name, email, username, password })
+            let result = await usertoRegisster.save()
+            res.json(result)
         }
-        console.log(usertoRegisster);
     })
 }
 )
@@ -30,16 +33,20 @@ UserRouter.post("/register", async (req, res) => {
 // });
 UserRouter.post("/login", async (req, res) => {
     if (req.body.username && req.body.password) {
-        let usertologin = await UserModel.findOne(req.body).select("-password")
+        let usertologin = await UserModel.findOne({
+            username: req.body.username
+        })
+        bcrypt.compare(req.body.password, usertologin.password, (err, result) => {
+            if (err || !result) {
+                res.json({ message: "password Incorrect" })
 
-        if (usertologin) {
-            res.send(usertologin)
-        } else {
-            res.send({ result: "no user found" })
-        }
-    }
-    else {
-        res.send({ result: "Plzz Enter both fields" })
+            } else {
+                // const payload = {username: usertologin.username,_Id : usertologin._id};
+                res.json(usertologin)
+
+
+            }
+        })
     }
 })
 
