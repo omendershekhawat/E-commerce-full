@@ -38,12 +38,12 @@ useEffect(()=>{
                 <input type="email" placeholder='Email' value={AdminEmail} onChange={(e) => setAdminEmail(e.target.value)} />
                 <input type="text" placeholder='Username' value={AdminUsername} onChange={(e) => setAdminUsername(e.target.value)} />
                 <input type="password" placeholder='Password' value={AdminPassword} onChange={(e) => setAdminPassword(e.target.value)} />
-                <div className='login-signup-btn-cont'>
-                    <button className='signupBtn' 
-                    onClick={(e)=>{
-                        e.preventDefault()
-                        RegisterUser()
-                    }}>Sign Up</button>
+                <div className='login-signup-btn-cont'> 
+                    <button className='signupBtn'  
+                    onClick={(e)=>{ 
+                        e.preventDefault() 
+                        RegisterUser() 
+                    }}>Sign Up</button> 
                 </div>
             </form>
         </div>

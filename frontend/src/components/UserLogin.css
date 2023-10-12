@@ -1,0 +1,25 @@
+.user{
+    border: 2px solid;
+    /* height: 300px; */
+    width: 400px;
+    margin: auto;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.user input{
+    display: block;
+    width: 90%; 
+    padding: 10px;
+    margin: 10px;
+
+}
+.user button{
+    padding: 10px 20px;
+    margin-right: 20px;
+    background-color: blue;
+    border-radius: 20px;
+}

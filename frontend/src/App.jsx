@@ -26,10 +26,10 @@ function App() {
           <Route path='/allproducts' element={<AllProducts/>}/>
           <Route path='/userSignUp' element={<UserSignup/>}/>
           <Route path='/allUserProducts' element={<Userproduct/>}/>
-
           <Route path='/adminlogin' element={<AdminLogin/>}/>
           <Route path='/AdminSignup' element={<AdminSignup/>}/>
           <Route path='/'element={<Home/>}/>
+
           
         </Routes>
       </BrowserRouter>
