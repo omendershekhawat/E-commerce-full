@@ -3,6 +3,8 @@ import cors from 'cors'
 import mongoose from "mongoose";
 import ProductRouter from "./ProductRouter.js";
 import UserRouter from "./userRouter.js";
+import AdminRouter from "./adminRouter.js";
+
 
 const connection = mongoose.connect("mongodb://127.0.0.1:27017/e-commerce")
 
@@ -13,6 +15,7 @@ app.use(cors())
 
 app.use("/product",ProductRouter)
 app.use("/user",UserRouter)
+app.use("/admin", AdminRouter)
 app.use('/uploads',express.static('uploads'))
 
 connection.then(()=>{
